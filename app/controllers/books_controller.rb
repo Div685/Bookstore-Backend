@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :update, :destroy]
+  before_action :set_book, only: %i[show update destroy]
 
   # GET /books
   def index
@@ -29,7 +29,7 @@ class BooksController < ApplicationController
 
   private
 
-  def book_params 
+  def book_params
     params.require(:book).permit(:title, :author, :category_id)
   end
 

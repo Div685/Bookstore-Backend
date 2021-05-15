@@ -15,10 +15,6 @@ class CategoriesController < ApplicationController
     json_response(@category, :created)
   end
 
-  def show
-    json_response(@category)
-  end
-
   def update
     @category.update(category_params)
     head :no_content

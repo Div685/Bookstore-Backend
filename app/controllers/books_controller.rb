@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   # GET /books
   def index
     @books = Book.all
-    json_response(@books)
+    render json: @books, include: %i[category], status: 200
   end
 
   def create

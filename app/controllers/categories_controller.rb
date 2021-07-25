@@ -26,8 +26,8 @@ class CategoriesController < ApplicationController
   end
 
   def filter
-    @filerBooks = @category.books
-    render json: @filerBooks, include: %i[category], status: 200
+    @filer_books = @category.books
+    render json: @filer_books, include: %i[category], status: 200
   end
 
   private

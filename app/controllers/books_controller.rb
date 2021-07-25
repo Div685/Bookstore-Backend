@@ -1,7 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show update destroy]
 
-  # GET /books
   def index
     @books = Book.all
     render json: @books, include: %i[category], status: 200
@@ -13,7 +12,6 @@ class BooksController < ApplicationController
   end
 
   def show
-    # @book = Book.find(params[:id])
     json_response(@book)
   end
 

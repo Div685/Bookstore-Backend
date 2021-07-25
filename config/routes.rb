@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'books#index'
   resources :books
   resources :categories
+  get 'categories/filter/:id' => 'categories#filter'
 end

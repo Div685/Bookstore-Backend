@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[show update destroy]
+  before_action :set_category, only: %i[show update destroy filter]
 
   def index
     @categories = Category.all
@@ -23,6 +23,11 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
     head :no_content
+  end
+
+  def filter
+    @filer_books = @category.books
+    render json: @filer_books, include: %i[category], status: 200
   end
 
   private
